@@ -1,0 +1,2 @@
+[console_scripts]
+promptcheck = promptcheck.cli:main

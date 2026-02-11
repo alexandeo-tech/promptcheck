@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+promptcheck/__init__.py
+promptcheck/cli.py
+promptcheck.egg-info/PKG-INFO
+promptcheck.egg-info/SOURCES.txt
+promptcheck.egg-info/dependency_links.txt
+promptcheck.egg-info/entry_points.txt
+promptcheck.egg-info/requires.txt
+promptcheck.egg-info/top_level.txt

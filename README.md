@@ -80,3 +80,42 @@ cd promptcheck
 python -m venv venv
 venv\Scripts\activate   # Windows
 python -m pip install -e .
+```
+
+## 🚀 Quick Start
+
+Create a prompt text file, for example `prompt.txt`, then run:
+
+```bash
+promptcheck validate prompt.txt
+```
+
+JSON output for CI/CD automation:
+
+```bash
+promptcheck validate prompt.txt --json
+```
+
+Run optional AI deep analysis:
+
+```bash
+promptcheck validate prompt.txt --ai
+```
+
+Customize AI timeout (seconds):
+
+```bash
+promptcheck validate prompt.txt --ai --ai-timeout 20
+```
+
+## 🔑 Environment
+
+AI mode requires `OPENAI_API_KEY`.
+
+Create `.env` in the project root:
+
+```bash
+OPENAI_API_KEY=your_api_key_here
+```
+
+If `--ai` is not passed, no OpenAI API call is made.
