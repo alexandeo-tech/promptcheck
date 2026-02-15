@@ -1,121 +1,61 @@
 # promptcheck
 
-**promptcheck** is a lightweight CLI tool that analyzes AI prompts for quality, risk, and cost *before* you run them in production.
+> Treat prompts like production artifacts — validate them before they ship.
 
-It helps developers:
-- Catch vague or risky prompts
-- Reduce hallucination risk
-- Control token usage and cost
-- Improve prompt structure
-- Automate prompt validation in CI/CD
+**promptcheck** is a lightweight CLI tool that analyzes AI prompts for quality, risk, and cost **before** you run them in production.
+
+It helps developers catch prompt issues early — similar to how we lint code or validate configuration files.
 
 No UI. No hype. Just useful signal.
+
+---
+
+## 👥 Who is this for?
+
+- Developers experimenting with LLM prompts
+- Engineers learning prompt safety and structure
+- Anyone who wants early signal on prompt risk and cost
+- Future CI/CD use (early-stage project)
 
 ---
 
 ## ✨ Features
 
 ### ✅ Deterministic (Free)
+
 - Prompt quality scoring (0–10)
-- Risk analysis (hallucination & cost)
+- Hallucination & ambiguity risk analysis
+- Token usage & cost estimation (offline heuristic)
 - Concrete improvement suggestions
-- Token & cost estimation (offline heuristic)
 - JSON output for automation
 
-### 🤖 AI-Powered Analysis (Optional, Bring Your Own Key)
-- Optional AI deep analysis (`--ai`)
+### 🤖 AI-Powered Analysis (Optional – Bring Your Own Key)
+
+- Optional AI analysis (`--ai`)
 - Uses **your own OpenAI API key**
-- AI usage is billed to **your OpenAI account**
-- Includes a local free trial (20 AI runs)
-- AI is **off by default** (no surprise costs)
+- AI usage is billed directly to **your OpenAI account**
+- Local free trial (20 AI runs per machine)
+- AI is **off by default**
 
 ---
 
-## AI Usage Modes
+## 🔍 Why promptcheck?
 
-promptcheck supports two AI usage modes:
+Prompt bugs are invisible until users hit them.
 
-### 1. Local AI — Bring Your Own API Key (Available Now)
+Unlike code, prompts are rarely validated — yet they directly affect system behavior, reliability, and cost.
 
-- You provide your own OpenAI API key via environment variables
-- AI calls are made directly from the CLI
-- promptcheck does **not** proxy, store, or manage your key
-- Usage is billed directly to your OpenAI account
-- Includes a local, per-machine free trial (20 AI runs)
+As teams experiment with LLMs, prompts increasingly behave like **configuration and control logic**, but without the safeguards we apply to other production artifacts.
 
-This mode is ideal for individual developers and local workflows.
-
----
-
-### 2. Cloud AI — Managed Mode (Planned, Not Available Yet)
-
-A managed cloud mode is planned for the future, where:
-
-- No OpenAI API key is required
-- AI usage is billed through a promptcheck subscription
-- Monthly usage limits are enforced server-side
-- Rate limiting and abuse protection are included
-
-⚠️ **Cloud mode is not available yet.**  
-No subscriptions, billing, or hosted AI services are currently offered.
-
----
-
-## 🔐 Cost & Safety Notes
-
-- promptcheck never ships with API keys
-- All AI usage is explicit and opt-in
-- AI features can be disabled instantly via a kill switch
-- Local safety caps prevent runaway usage during testing
-- No background or hidden AI calls are made
-- No billing is enabled by default
+**promptcheck treats prompts as first-class artifacts**, not just strings — providing early signal before problems reach users.
 
 ---
 
 ## 📦 Installation (local / dev)
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/promptcheck.git
+git clone https://github.com/alexandeo-tech/promptcheck.git
 cd promptcheck
 python -m venv venv
 venv\Scripts\activate   # Windows
 python -m pip install -e .
-```
-
-## 🚀 Quick Start
-
-Create a prompt text file, for example `prompt.txt`, then run:
-
-```bash
-promptcheck validate prompt.txt
-```
-
-JSON output for CI/CD automation:
-
-```bash
-promptcheck validate prompt.txt --json
-```
-
-Run optional AI deep analysis:
-
-```bash
-promptcheck validate prompt.txt --ai
-```
-
-Customize AI timeout (seconds):
-
-```bash
-promptcheck validate prompt.txt --ai --ai-timeout 20
-```
-
-## 🔑 Environment
-
-AI mode requires `OPENAI_API_KEY`.
-
-Create `.env` in the project root:
-
-```bash
-OPENAI_API_KEY=your_api_key_here
-```
-
-If `--ai` is not passed, no OpenAI API call is made.
