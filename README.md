@@ -9,6 +9,12 @@ If you find this project useful:
 
 Even a quick star helps others discover the project and supports development.
 
+👀 Watch the repository if you'd like to follow updates and new features.
+
+This project is still evolving and many improvements are planned.
+
+Early feedback and suggestions are very welcome.
+
 🚀 Example
 promptcheck analyze "Explain quantum computing simply"
 
