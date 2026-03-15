@@ -1,5 +1,51 @@
 # promptcheck
 
+## ⭐ Support PromptCheck
+
+If you find this project useful:
+
+⭐ **Star the repository**
+💬 **Share feedback or ideas in Discussions / Issues**
+
+Even a quick star helps others discover the project and supports development.
+
+🚀 Example
+promptcheck analyze "Explain quantum computing simply"
+
+Example output:
+
+Prompt Quality Score: 7.8 / 10
+Ambiguity Risk: Medium
+Hallucination Risk: Low
+Estimated Tokens: 45
+Estimated Cost: $0.0001
+
+Suggestions:
+- Add target audience
+- Specify output format
+
+
+🛣 Roadmap
+
+Planned improvements:
+CI/CD integration for prompt validation
+Prompt regression testing
+GitHub Actions integration
+Prompt security scanning
+VS Code extension
+Prompt dataset benchmarking
+
+
+💬 Feedback & Ideas
+
+Have ideas for prompt validation or prompt engineering tools?
+
+Start a discussion here:
+https://github.com/alexandeo-tech/promptcheck/discussions
+
+Real developer feedback helps shape the project.
+
+
 > Treat prompts like production artifacts — validate them before they ship.
 
 **promptcheck** is a lightweight CLI tool that analyzes AI prompts for quality, risk, and cost **before** you run them in production.

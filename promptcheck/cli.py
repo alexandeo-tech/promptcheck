@@ -187,6 +187,12 @@ def validate_command(
         for suggestion in result["suggestions"]:
             print(f" - {suggestion}")
 
+    print("\n---")
+    print("Thanks for using PromptCheck!")
+    print("⭐ If this tool helped you, please star the repo:")
+    print("https://github.com/alexandeo-tech/promptcheck")
+    print("💬 Feedback and ideas are welcome.")
+
 
 def main():
     app()
